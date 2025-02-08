@@ -1,9 +1,8 @@
 :root {
     --primary-color: rgb(236, 236, 236);
     --secondary-color: rgb(21, 21, 21);
-    --blue-color: #2bc5cd;
+    --yellow-color: #e4d533;
     --orange-color: #ff693d;
-    --border: 2px solid var(--blue-color);
     --spacing: 28px;
     font-family: Arial, Helvetica, sans-serif;
   }
@@ -11,116 +10,177 @@
   /* Resto del CSS */
   
   
-  .school {
-    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
-  }
-  
-  .student {
-    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
-  }
-  
-  .time {
-    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
-  }
-  
-  .alumni {
-    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
-  }
-  
-  .alumni,
-  .school,
-  .student,
-  .time {
-    background-size: cover;
-  }
-
-  .gridcontainer{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 15px;
-    width:950px;
-    margin: auto;
-  }
-
-header {
-    grid-column: 1/2;
-    grid-row: 1/3;
-    background-color:#2bc5cd;
-    text-align: justify;
-    color: rgb(236, 236, 236);
-    text-align: justify;
-    justify-items: center;
-    padding: 15px;
-  }
-
-h1{
-    text-transform: uppercase;
-    font-size: 16px;
+.VegetaBlue {
+  background-image: url(./assets/vegetablue.jpg);
 }
-
-header > p {
-    color:rgb(236, 236, 236);
-    align-content: center;
-    height: 90%;
+  
+.gokuUI {
+  background-image: url(./assets/gokuui.webp);
 }
-
-
-  .school{
-    grid-column: 2/3;
-    grid-row: 1/2;
-  }
-
-  .student{
-    grid-column: 3/4;
-    grid-row: 1/2;
-  }
+  
+.Jiren {
+  background-image: url(./assets/jiren.jpg);
+}
+  
+.GoldenFreezer {
+  background-image: url(./assets/goldenfrezzer.jpeg);
+}
   
 main{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    border-style: solid ;
-    border-color: #2bc5cd;
-    padding: 15px;
-    text-align: center;
-  }
-
-main > h2{
-    color: #2bc5cd;
-    text-transform: uppercase;
-    font-size: 16px;
-    height: 90%;
-    align-content: center;
+  background-image: url(./assets/arena.webp);
+}
+  
+body{
+  background-color: var(--secondary-color);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  height: 100vh;
+  width: 100%;    
+  margin: auto;
+  padding: 10px;
+  grid-template-areas: 
+  "header Jiren VegetaBlue"
+  "GoldenFreezer gokuUI VegetaBlue"
+  "main gokuUI footer";
 }
 
-  .time{
-    grid-column: 3/4 ;
-    grid-row: 2/3;
-    object-fit: cover;
-  }
+header, main, footer, .gokuUI, .VegetaBlue, .GoldenFreezer, .Jiren {
+  background-position: center;
+  background-size: cover;
+  color: var(--yellow-color);
+  height: auto;
+  width: auto;
+  max-height: 100% ;
+}
+
+header {
+  display: grid;
+  grid-area: header;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+  color: var(--primary-color);
+  font-size: 20px;
+  background-color: var(--orange-color);
+}
+
+.logo{
+  align-items: center;
+  height: auto;
+  justify-items: center;
+  max-width: 500px;
+}
+
+.gokuUI{
+  grid-area: gokuUI;
+  
+}
+
+.VegetaBlue{
+  grid-area: VegetaBlue;
+}
+  
+main{
+  display: grid;
+  grid-area: main;
+  align-content: center;
+  align-items: center;
+  justify-content: ju;
+  justify-items: center;
+  padding: 15px;
+  text-align: justify;
+  color: var(--primary-color);
+}
+main > h2{
+  text-transform: uppercase;
+}
+
+.GoldenFreezer{
+  grid-area: GoldenFreezer;
+}
  
-  .alumni{
-    grid-column: 1/2 ;
-    grid-row: 3/4;
+.Jiren{
+grid-area: Jiren;}
+
+footer{
+  display: grid;
+  grid-area: footer;
+  align-items: center;
+  align-content: center;
+  text-align: justify;
+  justify-content: center;
+  justify-items: center;
+  background-image: url(./assets/universo7.webp);
+  padding: 15px;
+  color: var(--primary-color);
+}
+
+footer >h3{
+  font-size: 25px;
+  color: var(--primary-color);
+  margin: auto;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 950px) {
+  .logo {
+    height: auto;
+  width: auto;  
   }
-
-  footer{
-    grid-column: 2/4;
-    grid-row: 3/4;
-    background-color: #ff693d;
-    padding: 15px;
-    text-align: justify;
+}
+  
+@media screen and (max-width: 750px) {
+  header {
+    grid-area: header; 
+    min-height: 200px;
   }
-
-  footer > p, h3{
-    color: rgb(236, 236, 236);
+  .logo{
+    height: auto;
+    width: auto;
   }
-
-  footer > button{
-    padding: 15px 30px;
-    text-transform: uppercase;
-    border-style: none;
+  .gokuUI {
+    grid-area: gokuUI;
+    min-height: 230px;
   }
-
-
- 
+  .VegetaBlue {
+    grid-area: VegetaBlue;
+    min-height: 250px;
+  }
+  main {
+    font-size: 15px;
+    grid-area: main;
+    min-height: 200px;
+  }
+  .GoldenFreezer {
+    grid-area: GoldenFreezer;
+    min-height: 300px;
+  }
+  .Jiren {
+    grid-area: Jiren;
+    min-height: 280px;
+  }
+  footer {
+    grid-area: footer;
+    min-height: 200px;
+  }
+  footer > h3{
+    font-size: 50px;
+  }
+  body {
+    width: auto;
+      min-height: 900px;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: 
+                          "header"
+                          "gokuUI"
+                          "VegetaBlue"
+                          "main"
+                          "GoldenFreezer"
+                          "Jiren"
+                          "footer";
+    }
+  }
